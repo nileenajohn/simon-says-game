@@ -1,0 +1,36 @@
+SimonWorld:
+The class SimonWorld has several fields that keep track of the state of the world.
+There are 4 Button fields which represent each button in the game.
+There are also 3 List of Buttons fields.
+The first ILoButton field is btnSequence which represents the sequence of buttons that are flashed to the player.
+The second ILoButton field is guessed which represents the sequence of buttons that have been guessed by the player.
+The third ILoButton field is toBeGuessed which represents the sequence of buttons that need to be guessed by the player. 
+There is a boolean field called gameEnd which represents if the game is over or not.
+There is a int field called level which represents what level the player is on and how many buttons should be flashed to the player in the sequence.
+There is a rand field which is used to create the next new random button in the sequence.
+
+MtLoButton:
+The class MtLoButton represents an empty list of buttons and implements ILoButton which represents a list of buttons.
+It has no fields because it is an empty list containing no buttons.
+This class handles functions on an empty list of buttons which also apply to the base case recursive calls in the functions of the ConsLoButton class.
+
+ConsLoButton:
+The class ConsLoButton represents a non-empty list of buttons and implements ILoButton which represents a list of buttons.
+It helps keep track of the buttons that are contain in the list of buttons for btnSequence, guessed, and toBeGuessed fields of SimonWorld.
+ConsLoButton has 2 fields.
+The first is a Button which represents the first button in this list.
+The second is an ILoButton which represents the rest of the buttons in the list.
+The class handles functions on a non-empty list of buttons.
+
+Button:
+The class Button represents one of the four buttons that can be flashed to the user and clicked.
+It is also a field representing the first button in the ConsLoButton class.
+It has 3 fields.
+The first field is a Color field called color which represents the color of the button.
+The second field is an int called x which represents the length of the button.
+The third field is an int called y which represents the width of the button.
+This class handles comparing this button to something and changes to the button such as making it appear brighter when it flashes or darker when it is not flashes.
+
+ExamplesSimon;
+The class ExamplesSimon represents examples and tests that are used for the SimonSays game.
+This includes tests and examples from all functions in all the classes: SimonWorld, MtLoButton, ConsLoButton, Button.
